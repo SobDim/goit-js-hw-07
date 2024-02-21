@@ -5,6 +5,20 @@
 
 const listOfCategories = document.querySelector('#categories');
 const category = listOfCategories.querySelectorAll('.item');
-const nameCategory = category.firstElementChild;
-console.log(category.length);
-console.log(nameCategory);
+
+console.log(
+  ` категорій в списку => ${category.length} \n=========================`
+);
+
+const titleCategory = document.querySelectorAll('.item h2');
+
+console.log(titleCategory);
+
+category.forEach(element => {});
+
+// console.log(listOfCategories);
+
+// console.log(category);
+// ;
+// const titleText = titleCategory.textContent.join(' ');
+// console.log(titleText);
