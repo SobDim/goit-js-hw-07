@@ -6,14 +6,13 @@
 const listOfCategories = document.querySelector('#categories');
 const category = document.querySelectorAll('.item');
 
-console.log(` категорій в списку => ${category.length} `);
+console.log(`Number of categories: ${category.length} `);
 
-console.log(category);
 const titleCategory = document.querySelectorAll('.item h2');
 
 category.forEach(liStItem => {
   const title = liStItem.querySelector('h2').textContent;
   const subcategory = liStItem.querySelectorAll('li');
-  console.log(title);
-  console.log(`кількість підпунктів ${subcategory.length}`);
+  console.log(`Category: ${title}`);
+  console.log(`Elements: ${subcategory.length}`);
 });
