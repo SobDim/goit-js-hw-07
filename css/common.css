@@ -142,6 +142,8 @@ ul#categories ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  column-gap: 24px;
+  row-gap: 48px;
 
 }
 
@@ -150,19 +152,20 @@ ul#categories ul {
 
 .cards {
   list-style: none;
-  border: 8px solid pink;
-  background-color: rgb(235, 212, 216);
-  border-radius: 20px;
-  width: 640px;
-  padding: 15px;
-  margin: 30px;
+  border: 1px solid rgb(128, 128, 128);
+
+  background-color: rgb(128, 128, 128);
+
+  border-radius: 8px;
+  width: 360px;
+  padding: 2px;
   box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18);
 }
 
 .item img {
   height: 100%;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 #name-input {
