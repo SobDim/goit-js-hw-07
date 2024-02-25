@@ -1,5 +1,5 @@
 /*
-Напиши скрипт створення й очищення колекції елементів з наступним функціоналом.
+
 Є input, у який користувач вводить бажану кількість елементів. Після натискання на кнопку Create має рендеритися (додаватися в DOM) колекція з відповідною кількістю елементів і очищатися значення в інпуті. При повторному натисканні на кнопку Create поверх старої колекції має рендеритись нова. Після натискання на кнопку Destroy колекція елементів має очищатися.
 
 Після натискання користувачем на кнопку Create треба провалідувати значення в input, воно має бути в межах від 1 до 100 включно. Тільки якщо воно задоволяє умову, мають додаватися нові <div> елементи в DOM.
@@ -29,4 +29,43 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
+}
+
+const input = document.querySelector('input[type="number"]');
+const crtBtn = document.querySelector('button[data-create]');
+const dstBtn = document.querySelector('button[data-destroy]');
+const boxes = document.querySelector('#boxes');
+
+crtBtn.addEventListener('click', onCrtBtnClick);
+// dstBtn.addEventListener('click', onDstBtnClick);
+dstBtn.addEventListener('click', onDstBtnClick => destroyBoxes());
+
+function onCrtBtnClick() {
+  const amount = parseInt(input.value);
+  if (amount >= 1 && amount <= 100) {
+    createBoxes(amount);
+    input.value = '';
+  } else {
+    alert('Please enter number beetwen 1 and 100');
+    input.value = '';
+  }
+}
+
+function createBoxes(amount) {
+  boxes.innerHTML = '';
+  for (let i = 0; i < amount; i++) {
+    const newBox = document.createElement('div');
+    const size = 30 + i * 10;
+    newBox.style.width = size + 'px';
+    newBox.style.height = size + 'px';
+    newBox.style.backgroundColor = getRandomHexColor();
+    boxes.appendChild(newBox);
+  }
+}
+
+// function onDstBtnClick() {
+//   destroyBoxes();
+// }
+function destroyBoxes() {
+  boxes.innerHTML = '';
 }
